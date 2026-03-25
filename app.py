@@ -14,20 +14,30 @@ app = Dash()
 #defining the app layout
 app.layout = html.Div([
     
-    html.H1(children='Pink Morsel Sales ( 2018-2020 )'),
+    
+    
+    html.H1(children='Pink Morsel Sales ( 2018-2020 )', style={
+        "textAlign": "center",
+        "color": "#333",
+        "marginBottom": "30px"
+    }),
     
     html.Div([
         dcc.Graph(
-            id='starter-graph',
+            id='starter-graph',style={
+                                "backgroundColor": "white",
+                                "padding": "20px",
+                                "borderRadius": "10px",
+                                "boxShadow": "0px 4px 12px rgba(0,0,0,0.1)",
+                                "marginBottom": "20px"}
             
         ),
         dcc.RadioItems(
             ['east', 'west', 'north', 'south', 'all'],
             id='xaxis-type', inline=True
-        )
-    ], style={'width': '100%', 'display': 'inline-block'})
+         ,style={ 'display': 'inline-block'}) 
+    ])
 ])
-
 
 
 @callback(
